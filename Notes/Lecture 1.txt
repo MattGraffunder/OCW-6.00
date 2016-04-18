@@ -1,0 +1,39 @@
+What is Computation
+
+Two types of Knowledge
+	-Declaritive
+		-Statements of Fact
+		-Tells you what is, not how to know.
+		-Provides a way to check if something is true
+	-Imperitive
+		-How to solve a problem
+		
+Algorithm
+	-Instructions
+	-Flow of Control
+	-Termination Condition
+	
+Fixed Program Computer
+	-Machine that performs one type of computation
+
+Stored Program Computer
+	-Algorithm is considered data
+	
+Interpreter
+	-Program that can execute any legal instruction set
+	
+Turing Completeness
+	-Six Primitive Single Bit Instructions
+	
+Programming Languages Requirements
+	-Syntax
+		--Tells us which strings are well formed
+	-Static Semantics
+		--Tells us which strings have meaning
+	-Semantics
+		--
+		
+What happens when a program doesn't do what is expected
+	--Might Crash
+	--Never Stop (Infinite Loop)
+	--Run to completion but produce the wrong answer
