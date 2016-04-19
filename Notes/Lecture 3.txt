@@ -1,0 +1,20 @@
+Terminate
+
+Decrementing Function
+	-Map set of program variables to an integer
+	-Starts with non-negative value
+	-When value is <= 0, loop terminates
+	-Decreased each time through the loop
+	
+Exhustive Enumeration
+	-"Guess and Check" or "Brute Force"
+	-Enumerates through the space of possible answers
+	-If no answer is found in the space of posible answers, then problem cannot have an answer.
+	
+Approximation
+	-Define how good of an approximation we'll accept
+	-Specification 
+	
+Bisection Search
+	-Cut Search Space in Half in each iteration
+	

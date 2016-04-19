@@ -1,0 +1,12 @@
+Functions:
+	-Decomposition
+		-Creates Structure
+		-Modules
+			-Self Contained, Reusable
+	-Abstraction
+		-Suppresses Details
+	Structure:
+		-Name
+		-Parameters
+		-Function Body
+	
