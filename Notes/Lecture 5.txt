@@ -1,0 +1,11 @@
+Collections in Python
+	-Tuples
+		-Ordered Sequences of Objects
+		-Need to do (x,) instead of (x) for single item tuple 
+		-Immutable
+	-Lists
+		-Ordered Sequences of Objects
+		-Mutable
+	-Dictionaries
+		-The key can be any immutable type
+		-Set of <Key, Value> pairs
