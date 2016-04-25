@@ -1,0 +1,13 @@
+Divide and Conquer
+	-Divide into smaller problems with two properties
+		-Small problems are easier to solve
+		-Solutions to small problems can easily be recombined into a solution for the original problems
+		
+Recursion
+	-Way of describing problems
+	-Way of designing solutions
+	
+	-Base Case
+		-Provides direct answer
+	-Inductive Case
+		-Reduce to a simpler version of the same problem
