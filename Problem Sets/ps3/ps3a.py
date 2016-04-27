@@ -182,9 +182,12 @@ def is_valid_word(word, hand, word_list):
     """
 
     #Check that word is in word list
-    if word not in word_list:
+    if not word_bisection_search(word, word_list):
         return False
 
+##    if not word_brute_force_search(word, word_list):
+##        return False
+    
     #Check that word can be made from letters in hand
     wordLetters = get_frequency_dict(word)  
 
@@ -195,6 +198,44 @@ def is_valid_word(word, hand, word_list):
             return False
 
     return True
+
+def word_bisection_search(word, word_list):
+    """
+    Return True if the word is in the word_list
+    """
+
+    lowGuess = 0
+    highGuess = len(word_list)
+
+    guess = (lowGuess + highGuess) / 2
+
+    while guess != lowGuess and guess != highGuess:
+        #Get word from list
+        guessWord = word_list[guess]
+
+        if guessWord == word:
+            return True
+        else:
+            if guessWord > word:
+                highGuess = guess
+            else:
+                lowGuess = guess
+
+        #choose new guess
+        guess = (lowGuess + highGuess) / 2
+
+    #Return False, nothing Found
+    return False
+
+def word_brute_force_search(word, word_list):
+    """
+    Return True if the word is in the word_list
+    """
+    #Check that word is in word list
+    if word in word_list:
+        return True
+    else:
+        return False
 
 def calculate_handlen(hand):
     handlen = 0
@@ -227,8 +268,8 @@ def DisplayWordIsInvalid(word):
 
 def DisplayWordResults(word, wordScore, handScore):
     print '"' + str(word) + '" earned ' + str(wordScore) + ' points.',
-    print DisplayHandScore(handScore)
-
+    DisplayHandScore(handScore)
+    
 def DisplayHandScore(handScore):
     print "Total: " + str(handScore) + " points."
 #
