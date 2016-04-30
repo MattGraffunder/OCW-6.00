@@ -1,0 +1,21 @@
+Floating Point Numbers
+	-Difficult to represent correctly in Binary
+	-Usually just get within a certain tolerance, and call them equal
+	-Do not compare equality of floats
+	
+Goal of Debugging
+	-Not to eliminate one bug quickly
+	-It is to move towards a bug free program
+	
+Techniques
+	-Ask How could it have produced the result it did.
+	-Steps:
+		-Study Available Data:
+			-Program Text
+			-Test Results
+		-Form Hypothesis Consistant with Data
+		-Design and run repeatable expirement
+			-Must have potential to refute the hypothesis
+	
+	-Find small input on which program fails
+	-There is no such thing as fixing the bug, there is only fixing a bug.
