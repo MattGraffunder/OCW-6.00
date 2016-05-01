@@ -1,0 +1,34 @@
+Linked Lists
+	-Every element is a pointer to the next element and the value
+	
+Indirection
+	-Separate the problem into another layer of abstractions
+	-I.e. Python uses a list of Pointers instead of linked list
+	
+Amortized Complexity
+	Example: 
+		Binary Search requires list to be sorted, but sorting is > O(L)
+		So, sorting a list before searching would be slower than a linear searching
+		If we sort once and search many times, we can amortalize the sort time over each search.
+		
+		If we plan on k searches:
+			Will O(sort(L)) + k * Log(len(L)) < k * len(L)
+			
+Sorting
+	-Selection Sort
+		-Establishes and maintain an invariant in this case is a pointer
+		-Prefix and Suffix
+		-Invariant = prefix is sorted
+		-O(n^2)
+
+	-Merge Sort
+		-Merge can be done in linear time
+		-Break the problem down into lists of length 1,
+		-Merge those lists into length 2, 2 to 4, etc. until merging two lists of size n/2
+		-O(n log(n))
+		
+Divide and Conquer
+	-Choose Threshold input Size, n0, smallest problem
+	-How many instances at each division (how many problems will we divide it into)
+	-Combine the solutions
+	
