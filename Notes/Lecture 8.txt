@@ -1,0 +1,40 @@
+Efficiency
+	-Efficiency is about algorithms
+	-Two dimensions: Space and Time
+	-Can trade between the two
+
+Problem Reducing
+	-Reduce problem to a previously solved problem
+	
+Computational Complexity
+	-Don't think of it in terms of time
+		Reasons:
+			-Speed of Machines vary
+			-Cleverness of language implementation
+			-Dependant on input (I.e. some inputs may be larger)
+	-Count number of basic steps
+		-Steps are not variable but constant
+	-Focuses on the worst case scenario 
+		-Upper Bound
+		-Happens often (I.e. Search for element that isn't in a list)
+	-Concerned with the growth of running time with respect to size of input
+		-Uses model of Asymptotic Growth, how the complexity grows as you reach the size of the inputs
+	
+Big O Notation
+	-Gives upper bound of the asymptotic growth of a function
+	
+	-I.e. f(x) => O(x^2) (Quadratic)
+		-Formally: The function f grows no faster than the quadratic polynomial x^2
+	
+	Common Examples:
+		-O(1) - Constant
+		-O(log n) -Logarithmic growth
+		-O(n) - Linear
+		-O(n log n) - Log Linear
+		-O(n^c) - Polynomial (c is a constant)
+		-O(c^n) - Exponential
+	
+Random Access Machine
+	-Abstraction used for analysis of algorithms
+	-Instructions are executed sequentially
+	-Memory Access in constant time
