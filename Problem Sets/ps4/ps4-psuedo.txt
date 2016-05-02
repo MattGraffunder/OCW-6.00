@@ -1,0 +1,19 @@
+Your algorithms should be plain English explanations for the steps your program will take to solve these problems.
+
+Write out your algorithm for Problem 2 here:
+
+set maxWords and bestShift to 0
+
+for each shift:
+	decode string
+	split string into word list on "SPACE"
+	
+	check each word for validity
+	
+	if there are more valid words than maxWords:
+		set maxWords to validWords
+		set bestShift to shift
+		
+return bestShift
+
+Write out your algorithm for Problem 4 here:

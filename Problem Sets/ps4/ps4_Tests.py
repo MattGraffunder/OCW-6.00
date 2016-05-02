@@ -130,9 +130,27 @@ def testApplyShift():
     else:
         print "Apply Shift Passed"
 
+def testFindBestShift():
+    testString = "The Quick Brown Fox Jumped Over the Lazy Dog."
+    shift = 11
+    cipherText = apply_shift(testString, 11)
+
+    bestShift = find_best_shift(word_list, cipherText)
+
+    if bestShift != shift:
+        print
+        print "Find Best Shift Failed"
+        print "Expected Best Shift to be " + str(shift) + " but instead got " + str(bestShift)
+    else:
+        print "Find Best Shift Passed"
+
+word_list = load_words()
+
 build_coder_tests()
 build_encoder_should_give_you_exactly_what_build_coder_does()
 build_decoder_should_give_you_exactly_what_build_coder_does_but_negative()
 
 testApplyCoder()
 testApplyShift()
+
+testFindBestShift()

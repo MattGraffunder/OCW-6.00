@@ -4,7 +4,7 @@
 #
 # Name: Matt Graffunder
 # Collaborators: None 
-# Time Spent: 1:00
+# Time Spent: 1:15
 
 import string
 import random
@@ -282,8 +282,29 @@ def find_best_shift(wordlist, text):
     >>> apply_coder(s, build_decoder(8)) returns
     'Hello, world!'
     """
-    ### TODO
-   
+
+    maxWords = 0
+    bestShift = 0
+    
+    for i in xrange(27):
+        #Decode String
+        decoded = apply_coder(text, build_decoder(i))
+
+        #Split String into Words
+        words = decoded.split(' ')
+
+        #Check Each Word
+        foundWords = 0
+        for word in words:
+            if is_word(wordlist, word):
+                foundWords += 1
+
+        #Update Best Shift if needed
+        if foundWords > maxWords:
+            maxWords = foundWords
+            bestShift = i
+
+    return bestShift
 #
 # Problem 3: Multi-level encryption.
 #
