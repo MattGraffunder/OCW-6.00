@@ -4,7 +4,7 @@
 #
 # Name: Matt Graffunder
 # Collaborators: None 
-# Time Spent: 1:15
+# Time Spent: 2:30
 
 import string
 import random
@@ -31,7 +31,7 @@ def load_words():
     print "  ", len(wordlist), "words loaded."
     return wordlist
 
-#wordlist = load_words()
+wordlist = load_words()
 
 def is_word(wordlist, word):
     """
@@ -324,7 +324,25 @@ def apply_shifts(text, shifts):
     >>> apply_shifts("Do Androids Dream of Electric Sheep?", [(0,6), (3, 18), (12, 16)])
     'JufYkaolfapxQdrnzmasmRyrpfdvpmEurrb?'
     """
-    ### TODO.
+
+    #for each shift
+        #Slice string into part to shift, and part to not
+        #Apply shift to shift string
+        #Append strings
+
+    outputString = text
+
+    for shift in shifts:        
+        #Slice string into part to shift, and part to not
+        shiftString = outputString[shift[0]:]
+
+        #Apply shift to shift string
+        shiftedString = apply_shift(shiftString, shift[1])
+
+        #Append strings
+        outputString = outputString[:shift[0]] + shiftedString
+    
+    return outputString
  
 #
 # Problem 4: Multi-level decryption.
@@ -360,6 +378,8 @@ def find_best_shifts(wordlist, text):
     Do Androids Dream of Electric Sheep?
     """
 
+    return find_best_shifts_rec(wordlist, text, 0)
+
 def find_best_shifts_rec(wordlist, text, start):
     """
     Given a scrambled string and a starting position from which
@@ -374,11 +394,49 @@ def find_best_shifts_rec(wordlist, text, start):
     start: where to start looking at shifts
     returns: list of tuples.  each tuple is (position in text, amount of shift)
     """
-    ### TODO.
 
+    #print "Find Best Shifts Rec called with: Text: ", text, " Start: ", str(start)
+
+    for s in xrange(27):
+        #Get part of string to decode
+        encodedText = text[start:]
+        
+        #Encode string from start
+        #Seems strange, but we're looking for shifts to decode the text
+        decodedString = apply_coder(encodedText, build_encoder(s))
+
+        #Check for valid words
+        numberOfValidWords = 0
+        possibleWords = decodedString.split(' ')
+
+        nextStart = start
+
+        for word in possibleWords:
+            if is_word(wordlist, word):
+                numberOfValidWords += 1
+                nextStart += len(word) + 1 #Need to add one for the space
+            else:
+                break #Didn't find a valid word, can stop searching
+
+        if numberOfValidWords > 0:
+            if len(possibleWords) == numberOfValidWords:
+                #print "Found All Words: ", possibleWords
+                return [(start, s),]
+            else:
+                newString = text[:start] + decodedString
+                bestShifts = find_best_shifts_rec(wordlist, newString, nextStart)
+                if bestShifts != None:
+                    return [(start, s),] + bestShifts
+                else:
+                    continue # Couldn't find a shift, continue looking                    
+
+        #print "Couldn't find word for ", decodedString, " shifted ", str(s)
+
+    #Got through all shifts, and couldn't find shift
+    return None
 
 def decrypt_fable():
-     """
+    """
     Using the methods you created in this problem set,
     decrypt the fable given by the function get_fable_string().
     Once you decrypt the message, be sure to include as a comment
@@ -387,15 +445,16 @@ def decrypt_fable():
 
     returns: string - fable in plain text
     """
-    ### TODO.
+    #Get the fable string
+    fableString = get_fable_string()
 
+    #Get the the decoding shifts
+    decodeShifts = find_best_shifts(wordlist, fableString)
 
+    #Apply the shifts to decode the table
+    return apply_shifts(fableString, decodeShifts)
 
     
 #What is the moral of the story?
-#
-#
-#
-#
-#
+#An Ingenious Man who had built a flying machine invited a great concourse of people to see it go up. at the appointed moment, everything being ready, he boarded the car and turned on the power. the machine immediately broke through the massive substructure upon which it was builded, and sank out of sight into the earth, the aeronaut springing out a rely in time to save himself. "well," said he, "i have done enough to demonstrate the correctness of my details. the defects," he added, with a add hat the ruined brick work, "are merely a sic and fundamental." upon this assurance the people came ox ward with subscriptions to build a second machine
 

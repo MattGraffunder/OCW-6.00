@@ -144,6 +144,48 @@ def testFindBestShift():
     else:
         print "Find Best Shift Passed"
 
+def testApplyShifts():
+    testString = "Do Androids Dream of Electric Sheep?"
+    shifts = [(0,6), (3, 18), (12, 16)]
+    expectedString = "JufYkaolfapxQdrnzmasmRyrpfdvpmEurrb?"
+
+    cipherText = apply_shifts(testString, shifts)
+
+    if expectedString != cipherText:
+        print
+        print "Apply Shifts Failed"
+        print "Expected: " + expectedString
+        print "Returned: " + cipherText
+    else:
+        print "Apply Shift Passed"
+
+def testFindBestShifts():
+    testString = "The Quick Brown Fox Jumped Over the Lazy Dog."
+    shifts = [(0, 23), (10, 2), (27, 5), (32, 11)]
+    reverseShifts = [(0, 4), (10, 25), (27, 22), (32, 16)]
+    cipherText = apply_shifts(testString, shifts)
+
+    #print "Cipher: " + cipherText
+    decodeShifts = find_best_shifts(word_list, cipherText)
+
+    decodedText = apply_shifts(cipherText, decodeShifts)
+
+    if decodeShifts != reverseShifts or testString.lower() != decodedText.lower():
+        print
+        print "Find Best Shifts Failed"
+        print "Expected Best Shifts to be ",
+        print reverseShifts,
+        print " but instead got ",
+        print decodeShifts
+        print "Expected text ", testString, " to be ", decodedText
+    else:
+        print "Find Best Shifts Passed"
+
+def testDecryptFable():
+    print
+    print "Decrypted Fable: "
+    print decrypt_fable()
+
 word_list = load_words()
 
 build_coder_tests()
@@ -154,3 +196,9 @@ testApplyCoder()
 testApplyShift()
 
 testFindBestShift()
+
+testApplyShifts()
+
+testFindBestShifts()
+
+testDecryptFable()
