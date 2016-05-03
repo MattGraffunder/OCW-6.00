@@ -17,3 +17,20 @@ for each shift:
 return bestShift
 
 Write out your algorithm for Problem 4 here:
+
+	loop through shifts
+		decode string from start using shift
+		split on "SPACE"
+		while word is valid:
+			move index forward
+			
+		if one or more word is valid
+			get shifts for remaining string
+			
+			if remaining shifts is None
+				continue checking other shifts
+			else
+				return shift + remainingShifts
+		
+Base Case: There is one valid word
+Inductive Case: There is one valid word, and invalid words
