@@ -1,0 +1,89 @@
+1) 12
+2) 4
+3) 10
+4) 18
+5) 0
+6) 13
+7) 8
+8) 6 
+9) 1
+10) 1
+
+
+
+
+
+1.1 - False
+1.2 - False [True]
+1.3 - False
+1.4 - False
+1.5 - False
+
+2 - 
+	print .2
+	print 2.4
+	print None
+	
+3 - 	"atm"
+		"hatm"
+			
+4 - 
+
+def findAll(wordList, lStr):
+	#Build Dict of lStr
+	lStrDict = BuildCharDict(lStr)
+
+	for word in wordList:
+		#Build Dict for word:
+		wordDict = BuildCharDict(word)
+			for char in wordDict.keys():
+				if char not in lStrDict:
+					break
+				
+				if wordDict[char] > lStrDict[char]:
+					break
+					
+				returnList.append(word)
+				
+	return returnList
+			
+def BuildCharDict(text):
+	dict = {}
+	for c in text:
+		if c in dict:
+			dict[c] += 1
+		else:
+			dict[c] = 1
+	return dict
+	
+5 -
+	#Declare outside IF/Else
+	result = []
+	other = []
+	
+6 -
+	print 1
+	print 5
+	print {}
+	print Error
+	
+	No, result is not defined at this scope.  Throws error
+
+7.1 - 
+	print None
+	print 'n = 0'
+	print 'n = 1'
+	
+7.2 O(n)
+
+8 
+	Big O notation
+	--e
+	
+	Newton's Method
+	--d
+	recursion
+	--a
+
+	
+	
