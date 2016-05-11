@@ -1,0 +1,15 @@
+Object Oriented Programming
+
+Abstract Data types
+Define an interface for each types
+	-Explains what the methods do
+	-Not how they do it
+Specification
+
+Data Hiding
+	-No direct access to instance variables and class variables
+	-Makes them extremely powerful		
+		
+Inheritance 
+	-Has all the properties of the super class
+	-Can override properties of super class
