@@ -1,0 +1,24 @@
+Hashing
+	Converts to an integer in the range 0->k
+	Placing integer in to a list of lists (or bucket)
+	Can find indexed element in constant time
+	
+	Hash function is Many-to-One
+	Collisions will happen in buckets
+	Linear rehash (keep a list of items)
+	
+Exceptions
+	Unhandled Exceptions cause crashes
+	Handle using a "Try-Except" Block
+	
+Module 
+	Collection of related functions
+	i.e. import math
+	
+Classes
+	Collection of Data and Functions
+	Method is a function associate with an object
+	
+Message Passing Metaphore
+	i.e. Class Circle with a method area
+		pass the object "Circle" the message "Area" which would cause "Circle" to return its area
