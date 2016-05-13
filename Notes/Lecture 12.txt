@@ -1,0 +1,28 @@
+Generator:
+	-yield keyword
+	-Is a function that rembers the point in the function body where it last returned, plus the local variables
+	-Allows you to control access to the list such that you could return a sub-set or other computed result
+	
+Analytic Methods
+	-Predict behavior given intial conditions and some parameters
+	-i.e. Newtonian Physics
+	
+Simulation Methods
+	-An estimation of what might happen to a system under certain condition and repeating that multiple time for slightly different conditions
+	-Systems that aren't mathematically tractable
+	-i.e. Weather Forecasting
+	-Successively refining series of simulations
+	-Useful to extract intermediate results
+	
+	-Build a model
+		-Gives useful information about behavior of a system
+		-Approximation to reality
+		Simulation models are descriptive, not prescriptive
+		
+Brownian Motion
+	-Example of a "Randow Walk"
+	
+Model
+	-Need a Drunk
+	-Need a Field
+	-Need a Location
