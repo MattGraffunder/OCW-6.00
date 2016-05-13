@@ -1,0 +1,19 @@
+Causal Non-determinism
+	-Belief that not every event was caused by a previous event
+	
+Predictive Non-determinism
+	-The inability to make accurate measurements of the word makes it impossible to make predictions
+	
+Stochastic Processes
+	-A process is stochastic if its next state depends on both its previous state and some random element
+	-Two events are independent if the outcome of one event has no influence on the outcome of another
+	
+random.choice
+	-Chooses an element from a list
+	-Implemented with random.random
+		-Generates a random float greater than 0, but not greater than 1
+		
+Data Visualization
+	-PyLab
+		-provides many of the facilities of MATLAB
+		-PyLab.Show should be used once, and only at the end.
