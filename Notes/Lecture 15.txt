@@ -1,0 +1,37 @@
+How many samples do we need to believe the answer?
+
+Variance
+	-Measure of how much spread there is in possible outcomes
+		
+Standard Deviation
+	-The fraction of values that are close to the mean.
+	std(X) = ((1/|num trials in X|) * Sum((x - mu) ^ 2))^(1/2) where X is the set of trials, x is the value of a trial,  and mu is the mean.
+	
+Coefficient of Variation
+	-Standard Deviation / Mean
+	-If <1, low variance
+	-Cannot be used for confidence intervals 
+	
+Confidence Interval 
+	-Range likely to contain unknown value and confidence level that values lies within range
+	
+Standard Error
+	p = % Sampled
+	n = sample size
+	se = ((p*(100-p)/n)) ** .5
+	
+Normal Distribution
+	-Peaks at mean
+	-Fall off symmetrically
+	-Also know as a "Bell Curve"
+	
+	-Commonly used to construct probabilistic models for two reasons
+		1) Nice mathematical properties
+			-Can be characterized solely by mean and standard deviation
+			-Mean and standard deviation can be used to construct confidence intervals
+		2) Many naturally occurring examples
+		
+	-Empirical Rule
+		-68% of the data is within 	1 sd of mean
+		-95% 								2 sd 
+		-99.7%								3 sd 

@@ -1,0 +1,16 @@
+Plotting
+
+Randomness in problem solving
+
+Monte Carlo Simulation
+	-Solving a probabilistic system using simulation rather than analytically solving equations
+	-Inferential Statistics
+		-A random sample tends to exhibt the same properties as the the population from which it is drawn
+		
+	Null Hypothesis 
+		-What you would get with a random event
+		
+Law of Large Numbers 
+	-Also known as Bernoulli's Law
+	-In repeated independent tests with the same actual probablility, P, 
+		chance that the fraction of times that outcome occurs converges to P as the number of trials goes to infinity
