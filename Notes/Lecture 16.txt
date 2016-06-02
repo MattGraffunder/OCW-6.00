@@ -1,0 +1,24 @@
+Computational Models
+
+Non-Gaussian Distributions
+
+Uniform Distribution
+	-Each Result is equally probably (i.e. rolling a dice)
+	-Can be characterized only by the range
+	
+Exponential Distribution
+	-Memoryless ( The likely hood of something happening doesn't increase with time, i.e. a drug half-life)
+	-Only continuous distribution that is memoryless
+	-Probability something remaining is (1-p) ^ t, where p is the probability and t is the time step
+	
+Analytic Models
+	
+Simulation Model
+
+Two main concerns for models
+	-Fidelity (i.e. Credibility)
+	-Utility (What questions are answerable)
+	
+Using Randomness to Solve Non-Random Problems
+	-Solving difficult analytical problems can be aided by using randomness
+	-Such as computing the value of pi to some level of precision.

@@ -1,0 +1,23 @@
+Before believing that our result is correct we have to have confidence that our conceptual model is correct and that we implemented it correctly.
+
+Physical Reality 
+
+Theoretical Model
+
+Computational Model
+
+Hooke's Law
+	f = -kx where k is the spring constant
+	
+Finding the best fit of a curve
+	-Least Squares Fit
+		- Sum((Observed[i]-Predicted[i]) ** 2) where observed is the data point at a position i, and predicted is the curve
+		
+Polyfit - Used to find a well fit curve
+	-polyfit(obsX, obsY, degree of polynomial)
+	-Uses Linear Regression
+	
+Coefficient of Determination (R ** 2)
+	(R ** 2) = 1 - (EE/MV) 
+	Where EE is the Estimated Error
+	and MV is the Variance in the Measured Data
