@@ -1,0 +1,91 @@
+Knapsack Problem
+	-Inherently Exponential
+	
+Machine Learning
+	-Algorithms that allow a computer to evolve behaviours based on empirical data
+
+	Two approaches
+		-Supervised Learning
+			-Associate a label with each example in a training set.
+			-Discrete labels are called Classification Problems
+			-Real labels are Regression Problems
+			
+			-Based on the training set, the goal is to build a program that can predict the answer for other cases.
+			
+			-Objective Function: Minimize training error
+				-Can cause over fitting, and might not generalize well
+			
+			Questions
+				-Are labels accurate?
+				-Is past representative of the future?
+				-Do you have enough training data to generalize
+				-Feature Extraction (i.e. trying to separate good students from bad based on their clothes)
+				-How tight should the fit be?
+		
+		-Unsupervised Learning
+			-Have training data, but don't have labels
+			-Typically learning about regularities of the data (i.e. structure of data)
+			
+			-Dominant form is "Clustering"
+				-Orgainizing points into groups whose members are similar in some way
+				
+			Can be described as an optimization problem
+				-Should have low intra-cluster dissimilarity
+				-Should have high inter-cluster dissimilarity
+			
+			Optimization Problem
+				Objective Function:
+					-minimize the combined dissimilarities
+				Constraint:
+					-maximum number of clusters -OR-
+					-maximum distance between clusters 
+					
+				Difficult to solve, greedy algorithms are common
+				
+				Two main greedy algorithms
+					-k-means
+						-Want exactly k clusters
+					-Hierarchical 
+						-Agglomerative clustering
+						
+						-N items
+						-N x N distance matrix
+						
+						1) Assign each item to own cluster
+						2) Find the most similar pair of clusters and merge them
+						3) Continue until you have one cluster
+						
+						End result is a hierarchy of clusters, that can be cut off where the observer likes
+												
+						-Linkage Criterion
+							-Single Linkage (connectedness or minimum method)
+								-Distance between clusters is defined as the shortest distance from any member to any other member
+							-Complete Linkage
+								-Distance between clusters is defined as the largest distance from any member to any other member
+							-Average Linkage
+								-Distance is defined as the average distance for all members
+							
+						Weaknesses
+							-Complexity is O(n^2)
+								-Doesn't scale well
+								-Time consuming
+							-Doesn't always find the optimal solution
+					
+				Without a proper constraint, could end up with a trivial solution
+					-i.e. one cluster per point.
+			
+			Variance (c -> cluster) = Sum((mean(c) -x))^2
+			
+Feature Selection
+	-Choosing different features will result in different clusters
+	-i.e. in grouping cities, there will be different clusters if grouping on size, distance, population, etc.
+	
+Feature Vector
+	-For multidimensional data
+	-i.e. for a city <gps, population>
+	-How do we reduce data with many feature into feature vectors, and compare them?
+	
+Inductive Inference
+	-The program observes examples that represent an incomplete information about some statistical phenominon
+	-Then tries to generate a model that summarizes some statistical property of that data to predict the future
+	
