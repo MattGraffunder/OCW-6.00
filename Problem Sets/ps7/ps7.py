@@ -75,14 +75,17 @@ class SimpleVirus(object):
         NoChildException if this virus particle does not reproduce.               
         """
 
-        reproduce = self.maxBirthProb * (1-popDensity)
-
-        if random.random() < reproduce:
+        if self.WillReproduce(popDensity):
             return SimpleVirus(self.maxBirthProb, self.clearProb)
         else:
             raise NoChildException()
 
-
+    def WillReproduce(self, popDensity):
+        """
+        Returns True if the virus will reproduce
+        False if the virus will not reproduce
+        """
+        return random.random() < self.maxBirthProb * (1-popDensity)
 
 class SimplePatient(object):
 
@@ -92,9 +95,7 @@ class SimplePatient(object):
     """    
 
     def __init__(self, viruses, maxPop):
-
         """
-
         Initialization function, saves the viruses and maxPop parameters as
         attributes.
 
@@ -108,7 +109,6 @@ class SimplePatient(object):
         self.maxPop = maxPop
 
     def getTotalPop(self):
-
         """
         Gets the current total virus population. 
         returns: The total virus population (an integer)
@@ -118,52 +118,60 @@ class SimplePatient(object):
 
 
     def update(self):
+		"""
+		Update the state of the virus population in this patient for a single
+		time step. update() should execute the following steps in this order:
 
-        """
-        Update the state of the virus population in this patient for a single
-        time step. update() should execute the following steps in this order:
+		- Determine whether each virus particle survives and updates the list
+		of virus particles accordingly.   
+		- The current population density is calculated. This population density
+		  value is used until the next call to update() 
+		- Determine whether each virus particle should reproduce and add
+		  offspring virus particles to the list of viruses in this patient.                    
+
+		returns: The total virus population at the end of the update (an
+		integer)
+		"""
+
+		self.viruses = self.GetSurvivingViruses()
+
+		#Calculate population density
+		density = self.GetPopulationDensity()
+		#print density
+
+		#Re-add updated virus list to patient        
+		self.viruses = self.GetUpdatedListOfViruses(density)
+
+		return self.getTotalPop()
+
+    def GetSurvivingViruses(self):
+		#Create new list of viruses
+		virusesThatSurvivedClear = []
+		
+		#Check each virus for removal
+		for virus in self.viruses:
+			if not virus.doesClear():
+				virusesThatSurvivedClear.append(virus)
+
+		return virusesThatSurvivedClear
+	
+    def GetUpdatedListOfViruses(self, density):
+        updatedViruses = []
         
-        - Determine whether each virus particle survives and updates the list
-        of virus particles accordingly.   
-        - The current population density is calculated. This population density
-          value is used until the next call to update() 
-        - Determine whether each virus particle should reproduce and add
-          offspring virus particles to the list of viruses in this patient.                    
-
-        returns: The total virus population at the end of the update (an
-        integer)
-        """
-
-        #Create new list of viruses
-        virusesThatSurvivedClear = []
-
-        #Check each virus for removal
-        for virus in self.viruses:
-            if not virus.doesClear():
-                virusesThatSurvivedClear.append(virus)
-
-        
-        self.viruses = virusesThatSurvivedClear
-        updatedViruses = [] #This will be the final list of viruses
-
-        #Calculate population density
-        density = float(self.getTotalPop()) / self.maxPop
-        #print density
-
-        #Check each virus
         for virus in self.viruses:
             #Add Virus back to updated
             updatedViruses.append(virus)
+            
             #Check if virus reproduced
             try:
                 updatedViruses.append(virus.reproduce(density))
             except:
                 pass
-
-        #Re-add updated virus list to patient
-        self.viruses = updatedViruses
-
-        return self.getTotalPop()
+                
+        return updatedViruses
+	
+    def GetPopulationDensity(self):
+		return float(self.getTotalPop()) / self.maxPop
 
 #
 # PROBLEM 2
