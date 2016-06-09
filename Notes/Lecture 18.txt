@@ -1,0 +1,68 @@
+Coefficient of Determination (R^2)
+	-(1- (EE/MV))
+	-EE is the Estimated Error
+	-MV is the Measured Variance
+	
+Pattern of Modeling a Physical System
+	1) Start with an experiment
+	2) Use Computation to find and evaluate a modle
+	3) Use some theory and analysis and computation to derive the consequence of the model
+	
+Optimization Problems
+	1) An Objective Function
+		-Will be maximized or minimized
+	2) Set of constraints that must be obeyed
+	
+Problem Reduction
+	-Map a problem onto an existing solved problem
+	
+Knapsack Problem
+	-(0/1 Knapsack Problem)
+		-We must take the entire item, or none of it
+	-Continuous Knapsack Problem
+		-Where there is a quantity of small item, and the knapsack's capacity can be exhausted
+		-i.e. a barrel of gold dust vs. a barrel of rice.
+	-How does a burgler maximize the value of stolen goods
+	
+	Formalization of Knapsack Problem
+		1) Item = <Value, Weight>
+		2) W as Max Weight
+		3) I as vector of available items
+		4) V as vector which represents whether an item I has been taken
+			V[i] = 1 -> I[i] has been taken
+		
+	Objective Function
+		-Maximize: Sum(V[i] * I[i].value)
+	Constraint
+		-Subject to: Sum(V[i] *I[i].weight) < W
+	
+	Straightforward Solution (Brute Force)		
+		1) Enumerate all Possibilities
+		2) Choose the best that satisfies the constraint
+		
+		Guaranteed to provide an optimal solution
+		
+		Complexity
+			-2 ^ n
+			-Example: Brute Forcing 2^50 at one item per microsecond would take about 36 years.
+	
+Greedy Algorithm
+	-Iterative
+	-At each step, pick the locally optimal solution
+		
+	-There can be several different fitness functions to find the locally optimal solution
+		-For a 0/1 knapsack, none are guaranteed to be better for all sets.
+		-For a Continuous Knapsack, a greedy algorithm can provide the optimal solution.
+	
+	Example: for the knapsack problem
+		-Pick the best choice, and put it in the knapsack
+		-Check if you have room for any more objects
+		-Repeat until there isn't room.
+		
+	Algorithmic Efficiency
+		-Sort Complexity is O(n log(n))
+		-Iteration Complexity is O(n)
+		
+		-Greedy therefore is O(n log(n)) or better
+
+		
