@@ -1,0 +1,14 @@
+1) 
+	- It is O(n log(n))
+		-O(n log(n)) for the sort, and 
+		-O(n) to check the items
+	-Mine is still O(n log(n)) because building the list of Course Objects is only O(n)
+	
+2)
+	-It is exponential O(2^n)
+	
+3) Time to compute @ 1 per microsecond (1 x 10^-6) (3.15 x 10^13 per year)
+	a) 2^8 = 256 checks ( 8.17 x 10^-12 years)
+	b) 2^16 = 65536 (2.08 x 10^-9 years)
+	c) 2^32 = 4294967296 (1.36 x 10^-4 years)
+	d) 2^231 = 3.45 * 10 ^69 (1.09 x 10^56 years)
