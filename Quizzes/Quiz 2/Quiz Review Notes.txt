@@ -1,0 +1,3 @@
+Coefficient of Variance = (std / mean)
+	- Tells you how spread the data is.
+	- If <= 1, then there isn't a lot of variation

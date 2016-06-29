@@ -1,0 +1,55 @@
+1) 15
+2) 18 (I assume 1000,000 was a typo)
+3) 16
+4) 10? (Key can't  be right, no function could print word "Radius"
+5) 19
+6) 0
+7) 12
+
+
+
+1)
+	a) True
+	b) False
+	c) False
+	d) True
+	e) False
+	
+2)
+	a)[100000, 100000, 100000]
+	b) True
+	c) True
+	d) True
+	
+3) 
+	Top-Left)			y4 (y2 is linear, so (n+1) - n is always 2)
+	Top-Right)			y2 (List counts by twos)
+	Bottom-Left)		y1 (Function is Quadratic)
+	Bottom-Right)	y3 (Spread is increasing linearly)
+	
+	
+4)
+	Rectangle with area 6
+	Rectangle with area 6
+	Circle with diameter 2
+	
+5)
+	def sim():
+		numTimesHeads = 0
+		numTrials = 10000
+		
+		for x in xrange(numTrials):
+			if simThrows(10):
+				numTimesHeads += 1
+			
+		return float(numTimesHeads) / numTrials
+
+6)
+		No, if the data is quadratic and the curves are a 2nd degree and 3rd degree polynomial the 2nd degree would provide a better least squares fit.
+		If the data was cubic then, the 3rd degree would provide a better least squares fit.
+		
+7) 
+	data abstraction)	f (specification)
+	merge sort)			b (divide and conquer)
+	polymorphism)		a (inheritance)
+	hashing)				e (O(1))

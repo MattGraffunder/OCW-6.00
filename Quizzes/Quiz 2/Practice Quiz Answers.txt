@@ -1,0 +1,87 @@
+1) 
+	a) Correct
+	b) Correct
+	c) Correct
+	d) Correct 
+	e) Correct	
+2) Correct
+3) 
+	a) Correct
+	b) Correct 
+4) Correct
+5)
+	a) Correct
+	b) Correct
+	c) Correct
+6) Correct
+7) Correct
+	
+1)
+	a) True 
+	b) False
+	c) True
+	d) False
+	e) False
+
+2)	11
+
+	5 Iterations :
+	
+	1) i = 0, x[0] = 1
+		1 * (2**0) = 1
+		y = 1
+		
+	2) i = 1, x[1] = 1
+		1 * (2**1) = 2 
+		y = 3
+	
+	3)	i = 2, x[2] = 0
+		0 * (2 **2) = 0
+		y=3
+		
+	4) i = 3, x[3] = 1
+		1 * (2**3) = 8
+		y=11
+		
+	5) i = 4, x[4] = 0
+		0 * (2 **4) = 0
+		y=11
+	
+3)
+	a) 100000
+	b) 100000
+	
+4) (9/10) ** 10 = 34.87%
+
+5)
+	a) Figure 2
+	b) Figure 1
+	c) Figure 3
+	
+6)
+	16
+	"Circle with radius 4"
+	"Circle with radius 8"
+	
+	L = [C(0), S(1), C(2), S(3), C(4), S(5), C(6), S(7), C(8), S(9)]
+	A = [0, 1,,9,,25,,49,,81]
+	
+7) 
+	minGuess = 0
+	maxGuess = maxVal
+	
+	guess = (maxGuess + minGuess) / 2
+	
+	result = cmpGuess(guess, maxVal)
+	
+	while result != 0:
+		if result == -1:
+			maxGuess = guess + 1
+		elif result == 1:
+			minGuess = guess - 1
+			
+		guess = (maxGuess + minGuess) / 2
+			
+		result = cmpGuess(guess, maxVal)
+		
+	return guess
