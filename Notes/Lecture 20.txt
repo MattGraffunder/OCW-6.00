@@ -1,0 +1,22 @@
+Feature Vector
+	-Scale Elements of the Vectors
+		i.e. a vector of distance and temp
+	-Feature Selection and Scaling is Critical
+		-Done using domain knowledge
+		
+Minkowski Metric
+	-Method for measuring the distance between two vectors
+	
+Nominal Categories
+	-i.e. Eye color
+	-Convert to a number, requires domain knowledge
+	
+k-means clustering
+	1) Choose k (number of final clusters)
+	2) Choose k points for intial centroids
+		-Often chosen at random
+	3) Assign each point to a cluster
+		-Not likely to produce anything meaningful
+	4) Choose new centroid for each cluster
+	5) Assign each pt to new cluster
+	6) Repeat 4 & 5 until change is small

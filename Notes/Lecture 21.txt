@@ -1,0 +1,16 @@
+Graph Theory
+
+Graph
+	-Set of Nodes (Vertices)
+	-Connected by set of edges (arcs)
+	
+If edges are unidirectional, graph is called digraph or directed graph
+
+Edges have weights
+
+Structure of Graphs
+	-Adjacency Matrix (N x N)
+		-Represented as an N x N array
+		-Doesn't handle multiple edges 
+	-Adjacency List
+		-Represented by listing all edges eminating from that node
