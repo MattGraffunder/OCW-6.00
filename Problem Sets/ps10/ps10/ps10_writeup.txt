@@ -1,0 +1,11 @@
+Problem 1
+	- Error decreases from the training set as the number of clusters decreases
+	- Holdout error seems to be too low.
+
+	- The holdout error decreases slowly because it should be close to the average error of each training point to the training cluster.
+
+
+Problem 2
+	-Yes, Hennipen clusters with the same counties
+	-Run produced an avg occurance of 2.7 times
+	-Counties seem similare in housing prices, and income.
