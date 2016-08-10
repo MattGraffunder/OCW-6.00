@@ -30,11 +30,18 @@ class Point(object):
         return self.name
 
 class County(Point):
-    weights = pylab.array([1.0] * 14)
+    weights = pylab.array([0.0] * 14)
+    #weights[0] = 1 # Set Home Value Weight to 1
+    #weights[1] = 1 # Set Income Weight to 1
+    weights[11] = 1 # Set Unemployed Weight to 1
+    weights[11] = 1 # Set HS Grad Weight to 1
+    weights[12] = 1 #Set College Grad Weight to 1
+    #weights[3] = 0 # Set Poverty Weight to 0
     
     # Override Point.distance to use County.weights to decide the
     # significance of each dimension
     def distance(self, other):
+        #print "COuntry Dis"
         difference = self.getAttrs() - other.getAttrs()
         return sum(County.weights * difference * difference) ** 0.5
     
@@ -198,6 +205,24 @@ def getAveIncome(cluster):
 
     return float(tot) / len(cluster.getPoints())
 
+def getAvePoverty(cluster):
+    """
+    Given a Cluster object, finds the average income field over the members
+    of that cluster.
+    
+    cluster: the Cluster object to check
+    
+    Returns: a float representing the computed average income value
+    """
+    tot = 0.0
+    numElems = 0
+    for c in cluster.getPoints():
+        tot += c.getOriginalAttrs()[2]
+
+    if len(cluster.getPoints()) == 0:
+        return 0.0
+        
+    return float(tot) / len(cluster.getPoints())
 
 def test(points, k = 200, cutoff = 0.1):
     """
@@ -282,9 +307,9 @@ def clusterError(clusters):
         clusterPoints = cluster.getPoints()
         
         for clusterPoint in clusterPoints:
-            error += clusterPoint.distance(cluster.getCentroid())
+            error += clusterPoint.distance(cluster.getCentroid()) ** 2
             
-    error **= 2
+    error **= .5
     
     return error
 
@@ -300,9 +325,9 @@ def holdoutError(clusters, holdouts):
             if distance < nearestDistance:                
                 nearestDistance = distance
                 
-        error += nearestDistance
+        error += nearestDistance ** 2
             
-    error **= 2
+    error **= .5
     
     return error
 
@@ -340,6 +365,25 @@ def GetMyCountyResuts(points):
     
     print "Avg appearances: " + str(float(totalAppearances) / len(similarCounties))
 
+def getPovertyDifference(clusters, points):
+    poverty = 0.0
+    
+    for point in points:        
+        nearestDistance = float('inf')
+        nearestCluster = {}
+
+        for cluster in clusters:
+            distance = point.distance(cluster.getCentroid())
+
+            if distance < nearestDistance:                
+                nearestDistance = distance
+                nearestCluster = cluster
+
+                poverty += (getAvePoverty(nearestCluster) - point.getOriginalAttrs()[2]) ** 2
+
+    poverty **=.5
+    return poverty
+
 def graphPredictionErr(points, dimension, kvals = [25, 50, 75, 100, 125, 150], cutoff = 0.1):
     """
     Given input points and a dimension to predict, should cluster on the
@@ -348,9 +392,45 @@ def graphPredictionErr(points, dimension, kvals = [25, 50, 75, 100, 125, 150], c
     """
 
 	# Your Code Here
+    kvalError = {}
+    clusterErrors = []
+    totalPovertyErrors = []
     
+    #For each kval
+    for k in kvals:        
+        print 
+        print "Kval: " + str(k)
+        #Partition point set
+        partition = randomPartition(points, .8)
+        
+        #compute clusters
+        clusters = kmeans(partition[0], k, cutoff, County)[0]
+        
+        #calc training data error
+        #totalError = clusterError(clusters)
+        #print totalError
+        
+        #calc holdout error
+        totalPovertyError = getPovertyDifference(clusters, partition[1])
+        print totalPovertyError
+        
+        #kvalError[k] = (totalError, totalPovertyError)
+        #clusterErrors.append(totalError)
+        totalPovertyErrors.append(totalPovertyError)
+        
+    #graph training error against holdout error
+    pylab.title('Difference of Poverty for each cluster size')
+    pylab.xlabel('Number of Clusters')
+    pylab.ylabel('Poverty Difference')
+    #pylab.plot(kvals, clusterErrors)
+    pylab.plot(kvals, totalPovertyErrors)
+    pylab.show()
+        
+
 
 #graphRemovedErr(testPoints)
 #graphRemovedErr(points)
 
-GetMyCountyResuts(points)
+#GetMyCountyResuts(points)
+#graphPredictionErr(testPoints, None)
+graphPredictionErr(points, None)

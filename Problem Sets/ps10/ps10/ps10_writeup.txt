@@ -9,3 +9,11 @@ Problem 2
 	-Yes, Hennipen clusters with the same counties
 	-Run produced an avg occurance of 2.7 times
 	-Counties seem similare in housing prices, and income.
+
+Problem 3
+	-Error is lower for smaller k.  I would imagine this is because the clusters with a lot of points would have an avg poverty close to the avg of the dataset.
+		As the clusters get more focused, the factors that don't impact poverty get more weight and the avg poverty gets further from the predicted point.
+
+Problem 4
+	- I found that for a vector of [Income, HS Grads, College Grads, and Unemployed] produced a more consistant result.  
+		This is likely because areas with a better educated population likely have more stable incomes.
