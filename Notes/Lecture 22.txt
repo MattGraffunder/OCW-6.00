@@ -1,0 +1,30 @@
+Shortest Path Problem
+	-Fewest Edges
+	
+Shortest Weighted Path
+	-Find the path with the smallest weight, even if more edges
+	
+Find Cliques
+	-Find set of nodes such that there exists a path connecting each node in the set
+	
+Minimum Cut Problem (min cut)
+	-Given two sets of nodes, find the minimum number of edges such that if removed, the two sets are disconnected
+	-I.e. how many powerlines would need to be cut in a network to cut off a city
+	
+Shortest Path Problem
+	-Recursive Depth First Search (DFS)
+		-Recursion Ends when Start = Ends
+		-Starts by choosing one child of current node
+			-Continues until reaching a node with no children, the node we're looking for, or a visited node
+			
+Memoization
+	-Table look up
+	-At the heart of dynamic programming
+	
+Dynamic Programming
+	-Used to solve exponential problems in less then exponential time
+	-Requires two properties
+		-Optimal Substructure
+			-Can find globally optimal solution by combining locally optimal solutions
+		-Overlapping Sub-problems
+			-If there isn't any overlap, then memoization won't yield any speedup

@@ -1,0 +1,14 @@
+Dynamic Programming
+	-Optimal Substructure
+	-Overlapping Sub-problems
+
+0/1 napsack problem exhibts both properties
+	-Has optimal substructure
+	-Overlapping sub-problems are non-intuitive
+		-What items are taken isn't relevent
+		
+	Problem appears to grow linearly
+		Speed is governed by the number of problems to solve (dict keys)
+		<toConsider, avail>
+			-toConsider is limited by the number of items
+			-avail is the initial weight and the number of different weights that sets of items can add up to
