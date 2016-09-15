@@ -1,0 +1,31 @@
+Statiscal Measures don't tell the whole story
+	- Look at the data
+	
+Pictures can be deceiving
+
+Garbage In Garbage Out - GIGO
+
+Cum Hoc Ergo Propter hoc Fallacy
+	-Correlation doesn't imply causation
+	-Lurking Variable
+		-A underlying piece of information that is related to two correlated sets of data but not seen from the statistics
+		
+Non-response bias
+	Using a sample and ignoring those that didn't respond (i.e. a census) and assuming that the sample is still random.
+
+Non-representative sample
+
+Convenience Sampling
+	-Using the population available instead of a random sample, and assuming the available sample is representative
+	
+Data Enhancement
+	-Over emphasising data when compared to its larger context.	
+		-i.e. swine flu being attributed to 159 deaths in a period of time, but the conventional flu being attributed to 36,000 annually.
+		
+	-Extrapolating data
+		-i.e. projecting 120% of people will be using the internet from a charting showing linear growth of internet service over a period of 5 years.
+		
+Texas Sharpshooter Fallacy
+	-Forming a hypothesis after reviewing the data.
+		-i.e. stating that there are more anorexics born in june than other months when the month was chosen after the data was seen
+			-Therefore not accounting for the probability that more anorexics could have been born in another month by random chance.
