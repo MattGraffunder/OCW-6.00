@@ -1,0 +1,58 @@
+Queueing Network Simulations
+	-Queues make economic sense, keep you resources at a high utilization (i.e. don't have checkouts open that aren't used)
+	-Balance between customer service and resource utilization
+	
+	Modeling
+		-There are Jobs
+		-Jobs enter queue
+		-queues feed into servers
+		-jobs are processed
+		
+	Arrival Process
+		-How to jobs arrive
+			-Batches (i.e. a large group that appears at once?)
+			-Distributed in time (for individually appearing jobs)
+				-Do they appear uniformly, or randomly
+				-(i.e. Cars entering a highway)
+				Inter-arrival Time Distribution
+				
+			-Typically modeled by the Poisson Process
+				-Random, but exponentially distributed
+	Service Mechanism
+		-How long
+			-Service Time Distribution
+				-Speed of Servers
+					-Fast Cashier or slow Cashier
+				-Length of job processing
+					-Small Basket vs two full carts.
+			-#Number of Servers
+			-Number of Queues
+			-Allow Premption (Can a server pause a job, and serve another job)
+			
+	Queue Characteristics (discipline)
+		-Policy (How to choose next job)
+			-Fifo
+			-Lifo
+			-SRPT (Shortest Remaining Processing Time)
+				i.e. take the fastest first
+				
+	Questions a model can answer
+	Avg waiting time?
+	Is waiting time bounded?
+	Avg Queue Length?
+	Bound on Queue Length?
+	Server Utilization?
+	
+	Fairness
+		-SRPT allows starvation
+		-Long jobs would never get processed if small jobs kept arriving
+		
+Pseudo Code
+
+Create Stops and Initialize
+	While time not expired
+		move bus
+		passengers arrive
+		when bus at stop
+			unload
+			load
