@@ -1,0 +1,20 @@
+Computational Thinking: The Process
+	-Identify or invent useful abstractions
+	-Formulate solution to a problem as a computational experiment
+	-Design and construct a sufficiently efficient implementation of experiment
+	-Validate experimental setup (i.e. debugging)
+	-Run experiment
+	-Evaluate results of experiment
+	-Repeat as needed
+	
+Two A's of computational thinkings
+	-Abstraction
+		-Choosing the right abstractions
+		-Operating in terms of multiple layers of abstractions
+		-Defining the relationships between the layers
+	-Automation
+		-Thinking in terms of mechanizing our abstractions
+		-Mechanization is possible
+			-Because we have precise and exacting notations and models (programming languages)
+			-There is a "machine" that can interpret our notation (i.e. python interpreter)
+			
