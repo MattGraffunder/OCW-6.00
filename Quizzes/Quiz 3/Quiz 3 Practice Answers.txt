@@ -1,0 +1,32 @@
+1)
+	a) False
+	b) True
+	c) False
+	d) True
+	e) False
+	
+2) 2
+	0
+	
+3) 3/8
+
+4)
+	1) a
+	2) c
+	3) d
+	4) b
+	5) g
+	
+5) No, There could be multiple shorest paths, and the minWeightPath may return a different paths
+
+6) Yes, the weight of the minWeightPath decreases by 2, the paths do not change.
+
+7) 
+	def cheapestTrip(city1, city2, G):
+		try:
+			cheapestPath = minWeightPath(G, city1, city2)
+			return cheapestPath.getWeight()			
+		except:
+			return None
+			
+8) foo sets the maximum number of nodes that can comprise the shorest path.

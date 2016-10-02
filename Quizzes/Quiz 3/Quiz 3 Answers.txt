@@ -1,0 +1,60 @@
+1) 12
+2) 10
+3) 0
+4) 18
+5) 0
+6) 10
+7) 5
+8) 5
+9) 0
+
+
+1)
+	a) False
+	b) true
+	c) False
+	d) True
+	e) False
+	
+2)
+	2* len(s) - len(s) ** 2
+	
+3) 
+	a) e
+	b) c
+	c) b
+	
+4)
+	a) g
+	b) h
+	c) f
+	d) d
+	e) c
+	f) i
+	
+5) d
+
+6) 
+	a)
+	
+	class LIFO(JobQueue):
+		def depart(self):
+			try:
+				return self.jobs.pop(-1)
+			except:
+				print 'depart called with empty queue'
+				raise ValueError('EmptyQueue')
+				
+	Change BusStop to inherirt from LIFO instead of FIFO
+	
+	b) No, it would perform the same as FIFO.  Jobs arrive with random amount of work.  There will not be any effect on wait times.
+		
+7) 1
+
+8) return totPassengers/leftWaiting
+
+9) 
+	a) b
+	b) c
+	c) a
+	
